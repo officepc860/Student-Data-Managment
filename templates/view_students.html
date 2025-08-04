@@ -1,0 +1,27 @@
+<h3>Students List (Batch: {{ selected_batch or 'All' }})</h3>
+<form method="GET" action="{{ url_for('view_students') }}">
+    <select name="batch" onchange="this.form.submit()">
+        <option value="">All Batches</option>
+        {% for b in batches %}
+            <option value="{{ b }}" {% if b == selected_batch %}selected{% endif %}>{{ b }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<table class="table">
+    <thead>
+        <tr><th>Roll</th><th>Name</th><th>Batch</th><!-- other columns --></tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+        <tr>
+            <td>{{ student.roll }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.batch }}</td>
+            <!-- other data -->
+        </tr>
+    {% else %}
+        <tr><td colspan="3">No students found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>

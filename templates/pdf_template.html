@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Student List PDF</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Student List{% if selected_batch %} - Batch {{ selected_batch }}{% endif %}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Roll</th>
+                <th>Batch</th>
+                <th>Name</th>
+                <th>College</th>
+                <th>Student Number</th>
+                <th>Guardian Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ student.roll }}</td>
+                <td>{{ student.batch }}</td>
+                <td>{{ student.name }}</td>
+                <td>{{ student.college }}</td>
+                <td>{{ student.student_number }}</td>
+                <td>{{ student.guardian_number }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

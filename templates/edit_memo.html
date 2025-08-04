@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Memo Receipt</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light p-4">
+<div class="container">
+    <h3 class="mb-4">✏️ Edit Memo Receipt</h3>
+    <form method="POST">
+        <div class="mb-3">
+            <label>Date</label>
+            <input type="date" name="date" class="form-control" value="{{ entry.date }}">
+        </div>
+        <div class="mb-3">
+            <label>Memo No</label>
+            <input type="text" name="memo_no" class="form-control" value="{{ entry.memo_no }}">
+        </div>
+        <div class="mb-3">
+            <label>Receipt No</label>
+            <input type="text" name="receipt_no" class="form-control" value="{{ entry.receipt_no }}">
+        </div>
+        <div class="mb-3">
+            <label>Course</label>
+            <input type="text" name="course" class="form-control" value="{{ entry.course }}">
+        </div>
+        <div class="mb-3">
+            <label>Amount (New Payment)</label>
+            <input type="number" step="any" name="new_payment" class="form-control" value="{{ entry.new_payment }}">
+        </div>
+        <button type="submit" class="btn btn-primary">💾 Update</button>
+        <a href="{{ url_for('memo_list') }}" class="btn btn-secondary">↩ Back</a>
+    </form>
+</div>
+</body>
+</html>

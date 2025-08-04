@@ -1,0 +1,29 @@
+<h3>Payments List (Batch: {{ selected_batch or 'All' }})</h3>
+<form method="GET" action="{{ url_for('view_payments') }}">
+    <select name="batch" onchange="this.form.submit()">
+        <option value="">All Batches</option>
+        {% for b in batches %}
+            <option value="{{ b }}" {% if b == selected_batch %}selected{% endif %}>{{ b }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<table class="table">
+    <thead>
+        <tr><th>Roll</th><th>Total Payment</th><th>Due</th><th>reference</th><th>Status</th><!-- other columns --></tr>
+    </thead>
+    <tbody>
+    {% for roll, payment in payments.items() %}
+        <tr>
+            <td>{{ roll }}</td>
+            <td>{{ payment.total_payment }}</td>
+            <td>{{ payment.due }}</td>
+            <td>{{ payment.reference }}
+            <td>{{ payment.status }}</td>
+            <!-- other data -->
+        </tr>
+    {% else %}
+        <tr><td colspan="4">No payments found.</td></tr>
+    {% endfor %}
+    </tbody>
+</table>

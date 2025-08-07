@@ -1,9 +1,9 @@
 {
-    "251f6150-e72c-4fe2-acb8-17f50c3793c7": {
-        "name": "Retina Sylhet",
-        "email": "retinasylhet@gmail.com",
-        "phone": "",
-        "password": "scrypt:32768:8:1$3PiIbea2uDRbXJWR$f60a6590518dab208cb29f302be0d4fa4ef42bf80b778c9a59180075908116e11669d8ed686f7ee8bec6cbe87b3978c10fe0fd1c7434905c0f2f5687afbf3e63"
+    "1": {
+        "name": "Admin",
+        "email": "admin@demo.com",
+        "phone": "01792143106",
+        "password": "pbkdf2:sha256:600000$oM9CUrMPTMCl6Qi6$468b8aa2318126b65700fb4e8951b65accc5f4e351281efecf8da043627d1c00",
         "is_admin": true
     }
 }

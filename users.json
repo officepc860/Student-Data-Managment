@@ -4,5 +4,6 @@
         "email": "retinasylhet@gmail.com",
         "phone": "",
         "password": "scrypt:32768:8:1$3PiIbea2uDRbXJWR$f60a6590518dab208cb29f302be0d4fa4ef42bf80b778c9a59180075908116e11669d8ed686f7ee8bec6cbe87b3978c10fe0fd1c7434905c0f2f5687afbf3e63"
+        "is_admin": true
     }
 }

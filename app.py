@@ -1040,8 +1040,7 @@ def export_pdf_custom():
 
     pdf = FPDF()
     pdf.add_page()
-    pdf.add_font('Staccato555', '', 'fonts/Staccato555.TTF', uni=True)
-    pdf.set_font('Staccato555', '', 40)
+    pdf.set_font('Arial', 'B', 40)  # ডিফল্ট Arial ফন্ট, একটু মোটা (bold)
     pdf.cell(190, 15, 'RETINA', ln=True, align='C')
     pdf.set_font("Arial", size=15)
     pdf.cell(190, 10, txt="Student List", ln=True, align='C')
@@ -1318,8 +1317,7 @@ def export_payment_pdf():
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
 
-    pdf.add_font('Staccato555', '', 'fonts/Staccato555.TTF', uni=True)
-    pdf.set_font('Staccato555', '', 40)
+    pdf.set_font('Arial', 'B', 40)  # ডিফল্ট Arial ফন্ট, একটু মোটা (bold)
     pdf.cell(190, 15, 'RETINA', ln=True, align='C')
     pdf.set_font("Arial", size=15)
     pdf.cell(190, 10, txt=f"Payment Report - Batch: {batch or 'All'} | Status: {status_filter or 'All'}", ln=True, align='C')
